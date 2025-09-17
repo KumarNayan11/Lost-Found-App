@@ -46,8 +46,8 @@ their belongings easily.
 ### 1. Clone the Repository
 
 ``` bash
-git clone https://github.com/your-username/lost-found-app.git
-cd lost-found-app
+git clone https://github.com/your-username/Lost-found-app.git
+cd Lost-found-app
 ```
 
 ### 2. Create a Virtual Environment (Optional but recommended)
