@@ -99,6 +99,8 @@ The app will start at: **http://127.0.0.1:5000/**
 ------------------------------------------------------------------------
 
 ## 🖼️ Screenshots
+![Screenshot_17-9-2025_125735_127 0 0 1](https://github.com/user-attachments/assets/3066eb5b-0612-4429-b441-1c1b467f569c)
+![Screenshot_17-9-2025_125728_127 0 0 1](https://github.com/user-attachments/assets/da1fe288-52b6-4630-b786-590a5cbba2bd)
 
 
 
