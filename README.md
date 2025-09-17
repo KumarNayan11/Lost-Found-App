@@ -31,10 +31,11 @@ their belongings easily.
 
     .
     ├── app.py                # Main Flask application
-    ├── lostfound.db          # SQLite database file (created automatically)
-    ├── templates/            # HTML templates
-    │   ├── index.html        # Homepage: list & search items
-    │   └── add_item.html     # Form to report lost items
+    ├── database.db           # SQLite database file (created automatically)
+    ├── templates/            # HTML templates (Jinja2 templating)
+    │   ├── base.html         # Base layout (header, footer, CSS, scripts)
+    │   ├── index.html        # Extends base.html → homepage: list, search, and manage items
+    │   └── additem.html      # Extends base.html → form to report lost items
     ├── static/               # Static files (CSS, images, JS)
     │   └── style.css         # Styling for the app
     └── README.md             # Project documentation
@@ -99,8 +100,9 @@ The app will start at: **http://127.0.0.1:5000/**
 ------------------------------------------------------------------------
 
 ## 🖼️ Screenshots
-![Screenshot_17-9-2025_125735_127 0 0 1](https://github.com/user-attachments/assets/3066eb5b-0612-4429-b441-1c1b467f569c)
-![Screenshot_17-9-2025_125728_127 0 0 1](https://github.com/user-attachments/assets/da1fe288-52b6-4630-b786-590a5cbba2bd)
+
+![Screenshot_18-9-2025_02840_127 0 0 1](https://github.com/user-attachments/assets/4fd494bc-376a-4296-8aa7-1217ff3d286c)
+![Screenshot_18-9-2025_02832_127 0 0 1](https://github.com/user-attachments/assets/b641aa40-d2bf-4750-9653-bc5d5fea6bea)
 
 
 
