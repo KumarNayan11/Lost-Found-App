@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Lost and Found Items</h1>
+
+    <div class="action-bar">
+        <a href="{{ url_for('add_item') }}">Add New Item</a>
+
+        <form method="post" action="{{ url_for('clear_items') }}"
+              onsubmit="return confirm('Are you sure you want to delete all items?');">
+            <button type="submit">Clear All</button>
+        </form>
+    </div>
+
+    <form class="search-form" method="get" action="{{ url_for('index') }}">
+        <input type="text" name="search" value="{{ search }}" placeholder="Search by name, description, or contact">
+        <button type="submit" class="search-btn">Search</button>
+        {% if search %}
+        <a href="{{ url_for('index') }}">Clear</a>
+        {% endif %}
+    </form>
+
+    <h2>Lost Items</h2>
+    <div class="form-container">
+        <ul>
+            {% set lost_count = 0 %}
+            {% for item in items if item[4] == 'Lost' %}
+            {% set lost_count = lost_count + 1 %}
+            <!-- Add class="lost" here -->
+            <li class="lost">
+                <strong>{{ item[4] }}:</strong> {{ item[1] }} - {{ item[2] }} (Contact: {{ item[3] }})<br>
+                <small>Added on: {{ item[5] }}</small>
+                <form method="post" action="{{ url_for('mark_found', item_id=item[0]) }}" style="display:inline; margin-left: 20px;">
+                    <button type="submit">Mark as Found</button>
+                </form>
+            </li>
+            {% endfor %}
+            {% if lost_count == 0 %}
+            <li class="empty">No current lost items found.</li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <h2>Found Items (Past Entries)</h2>
+    <div class="form-container">
+        <ul>
+            {% set found_count = 0 %}
+            {% for item in items if item[4] == 'Found' %}
+            {% set found_count = found_count + 1 %}
+            <!-- Add class="found" here -->
+            <li class="found">
+                <strong>{{ item[4] }}:</strong> {{ item[1] }} - {{ item[2] }} (Contact: {{ item[3] }})<br>
+                {% if item[6] %}
+                <small>Found on: {{ item[6] }}</small>
+                {% else %}
+                <small>Found date not recorded</small>
+                {% endif %}
+            </li>
+            {% endfor %}
+            {% if found_count == 0 %}
+            <li class="empty">No past found items.</li>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

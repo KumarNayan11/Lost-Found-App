@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>Report a lost Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Report a lost Item</h1>
+    <div class="form-container">
+        <form method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" required></textarea>
+
+            <label for="contact">Contact Info:</label>
+            <input type="text" name="contact" id="contact" required>
+
+            <!-- Hidden status input fixed to Lost -->
+            <input type="hidden" name="status" value="Lost">
+
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="back-link">Back to List</a>
+    </div>
+</body>
+</html>

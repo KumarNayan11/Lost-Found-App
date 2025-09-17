@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite database file
+lostfound.db
+
+# Environment variables file
+.env
+
+# VSCode or other editor folders
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Python virtual environments
+venv/
+env/
+.venv/
+
+# Logs and SQLite temp files
+*.log
+*.sqlite3
+*.db-journal
+
+# Python test cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Ignore pip cache
+pip-log.txt
+pip-delete-this-directory.txt
