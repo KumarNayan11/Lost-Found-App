@@ -31,10 +31,11 @@ their belongings easily.
 
     .
     ├── app.py                # Main Flask application
-    ├── lostfound.db          # SQLite database file (created automatically)
-    ├── templates/            # HTML templates
-    │   ├── index.html        # Homepage: list & search items
-    │   └── add_item.html     # Form to report lost items
+    ├── database.db           # SQLite database file (created automatically)
+    ├── templates/            # HTML templates (Jinja2 templating)
+    │   ├── base.html         # Base layout (header, footer, CSS, scripts)
+    │   ├── index.html        # Extends base.html → homepage: list, search, and manage items
+    │   └── additem.html      # Extends base.html → form to report lost items
     ├── static/               # Static files (CSS, images, JS)
     │   └── style.css         # Styling for the app
     └── README.md             # Project documentation
@@ -46,8 +47,8 @@ their belongings easily.
 ### 1. Clone the Repository
 
 ``` bash
-git clone https://github.com/your-username/lost-found-app.git
-cd lost-found-app
+git clone https://github.com/your-username/Lost-found-app.git
+cd Lost-found-app
 ```
 
 ### 2. Create a Virtual Environment (Optional but recommended)
@@ -100,6 +101,9 @@ The app will start at: **http://127.0.0.1:5000/**
 
 ## 🖼️ Screenshots
 
+![Screenshot_18-9-2025_02840_127 0 0 1](https://github.com/user-attachments/assets/4fd494bc-376a-4296-8aa7-1217ff3d286c)
+![Screenshot_18-9-2025_02832_127 0 0 1](https://github.com/user-attachments/assets/b641aa40-d2bf-4750-9653-bc5d5fea6bea)
+
 
 
 ------------------------------------------------------------------------
@@ -115,3 +119,7 @@ feel free to fork the repo and submit a PR.
 
 This project is open-source and available under the [MIT
 License](LICENSE).
+
+---
+
+<p align="center">💻 Made with ❤️ by <b>Nayan</b></p>
