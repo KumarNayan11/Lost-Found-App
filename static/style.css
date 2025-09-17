@@ -245,3 +245,22 @@ form select {
 form button[type="submit"] {
     margin-top: 15px;
 }
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #555;
+}
+
+.github-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
+}
+
+.github-icon:hover {
+    transform: scale(1.2);
+}

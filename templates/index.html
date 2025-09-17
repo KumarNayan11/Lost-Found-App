@@ -1,10 +1,6 @@
-<!doctype html>
-<html>
-<head>
-    <title>Lost and Found</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
     <h1>Lost and Found Items</h1>
 
     <div class="action-bar">
@@ -25,12 +21,11 @@
     </form>
 
     <h2>Lost Items</h2>
-    <div class="form-container">
-        <ul>
-            {% set lost_count = 0 %}
-            {% for item in items if item[4] == 'Lost' %}
-            {% set lost_count = lost_count + 1 %}
-            <!-- Add class="lost" here -->
+<div class="form-container">
+    <ul>
+        {% set lost_items = items | selectattr(4, 'equalto', 'Lost') | list %}
+        {% if lost_items %}
+            {% for item in lost_items %}
             <li class="lost">
                 <strong>{{ item[4] }}:</strong> {{ item[1] }} - {{ item[2] }} (Contact: {{ item[3] }})<br>
                 <small>Added on: {{ item[5] }}</small>
@@ -39,19 +34,19 @@
                 </form>
             </li>
             {% endfor %}
-            {% if lost_count == 0 %}
+        {% else %}
             <li class="empty">No current lost items found.</li>
-            {% endif %}
-        </ul>
-    </div>
+        {% endif %}
+    </ul>
+</div>
+
 
     <h2>Found Items (Past Entries)</h2>
-    <div class="form-container">
-        <ul>
-            {% set found_count = 0 %}
-            {% for item in items if item[4] == 'Found' %}
-            {% set found_count = found_count + 1 %}
-            <!-- Add class="found" here -->
+<div class="form-container">
+    <ul>
+        {% set found_items = items | selectattr(4, 'equalto', 'Found') | list %}
+        {% if found_items %}
+            {% for item in found_items %}
             <li class="found">
                 <strong>{{ item[4] }}:</strong> {{ item[1] }} - {{ item[2] }} (Contact: {{ item[3] }})<br>
                 {% if item[6] %}
@@ -61,10 +56,10 @@
                 {% endif %}
             </li>
             {% endfor %}
-            {% if found_count == 0 %}
+        {% else %}
             <li class="empty">No past found items.</li>
-            {% endif %}
-        </ul>
-    </div>
-</body>
-</html>
+        {% endif %}
+    </ul>
+</div>
+
+{% endblock %}
