@@ -117,3 +117,7 @@ feel free to fork the repo and submit a PR.
 
 This project is open-source and available under the [MIT
 License](LICENSE).
+
+---
+
+<p align="center">💻 Made with ❤️ by <b>Nayan</b></p>
